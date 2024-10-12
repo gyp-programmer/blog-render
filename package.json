@@ -3,22 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "pnpm pre:run && next dev",
+    "build": "pnpm pre:run && next build",
+    "start": "pnpm pre:run && next start",
+    "lint": "next lint",
+    "pre:run": "sh ./scripts/run.sh"
   },
   "dependencies": {
+    "@vercel/postgres": "^0.10.0",
+    "gyp-gao-ui": "0.0.2-beta.1",
+    "next": "14.2.15",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.15"
+    "sass": "^1.79.5"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.15"
+    "eslint-config-next": "14.2.15",
+    "typescript": "^5"
   }
 }
