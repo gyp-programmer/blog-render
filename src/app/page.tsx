@@ -11,9 +11,6 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 export default async function Home() {
-  const data = await fetch("http://localhost:3000/api");
-  const message = await data.json();
-
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -29,7 +26,6 @@ export default async function Home() {
           <li>
             Get started by editing <code>src/app/page.tsx</code>.
           </li>
-          <li>{message.message}</li>
         </ol>
 
         <div className={styles.ctas}>
