@@ -18,11 +18,10 @@ export const metadata: Metadata = {
   title: '创建数据',
 }
 
+export default async function CreateText() {
 
-export default function CreateText() {
   return (
     <div className='a'>
-        asdf
         <RichText />
     </div>
   );

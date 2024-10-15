@@ -11,6 +11,10 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 export default async function Home() {
+  // 首次尝试服务端渲染获取数据
+  // const data = await fetch("http://localhost:3000/api", { method: 'put' });
+  // const { rows } = await data.json();
+  
   return (
     <div className={styles.page}>
       <main className={styles.main}>
