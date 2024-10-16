@@ -15,10 +15,14 @@ export const getHost = () => {
     // https://developer.mozilla.org/docs/Web/API/Headers/get
     // https://nextjs.org/docs/app/api-reference/functions/headers
     const host = headersList.get('host');
+    const xForwardedHost = headersList.get('x-forwarded-host');
     const referer = headersList.get('referer');
-    console.info(logPrefix + 'url:===', host, referer)
+    const protocol = headersList.get('x-forwarded-proto');
+    console.info(logPrefix + 'url:===', host, referer, protocol)
     // 获取协议
-    const protocol = referer?.split('://')[0];
-    const url = `${protocol}://${host}`;
+    const realProtocol = referer?.split('://')[0] || protocol;
+    const realHost = host || xForwardedHost;
+    console.info(logPrefix + 'realUrl:==', realProtocol, realHost)
+    const url = `${realProtocol}://${realHost}`;
     return url;
 }
