@@ -7,6 +7,8 @@
  * Copyright © 2019-2024 bvox.com. All Rights Reserved.
  */
 import { headers } from 'next/headers';
+
+const logPrefix = '[blog-render]:--> '
 /** 获取当前域名 */
 export const getHost = () => {
     const headersList = headers();
@@ -14,6 +16,7 @@ export const getHost = () => {
     // https://nextjs.org/docs/app/api-reference/functions/headers
     const host = headersList.get('host');
     const referer = headersList.get('referer');
+    console.info(logPrefix + 'url:===', host, referer)
     // 获取协议
     const protocol = referer?.split('://')[0];
     const url = `${protocol}://${host}`;
