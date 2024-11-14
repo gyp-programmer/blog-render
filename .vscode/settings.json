@@ -1,0 +1,11 @@
+{
+  // 设置css文件中 @tailwind的警告 以下两种方式均可
+  "css.lint.unknownAtRules": "ignore",
+  "css.customData": [".vscode/css_custom_data.json"],
+  // Set the default
+  "editor.formatOnSave": true,
+  // Enable per-language
+  "[javascript]": {
+    "editor.formatOnSave": true
+  }
+}
